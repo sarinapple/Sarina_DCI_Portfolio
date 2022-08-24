@@ -1,0 +1,64 @@
+// @import "base";
+// You need the base only when you are not using bootstrap. In that case, go to _base.scss
+// to customize it as you may want.
+
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Write your sass code here or import partials
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: "peachSundress";
+  src: url("./assets/fonts/bulletto/Bulletto\ Killa.ttf");
+}
+
+body {
+  background-color: rgba(191, 214, 217, 0.89);
+}
+
+.greeting-text {
+  font-family: "peachSundress";
+  font-size: 9rem;
+  letter-spacing: 0.5rem;
+  /* word-spacing: 2rem; */
+}
+
+.hi-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(12, 180px);
+  gap: 2px;
+}
+
+.hb-01,
+.hb-03,
+.hb-05,
+.hb-07,
+.hb-08,
+.hb-09,
+.hb-013,
+.hb-014,
+.hb-015,
+.hb-016,
+.hb-017,
+.hb-021,
+.hb-023,
+.hb-024,
+.hb-025,
+.hb-027,
+.hb-029,
+.hb-031 {
+  visibility: hidden;
+}
+
+.h-block {
+  /* width: 220px;
+    height: 220px; */
+  background-color: black;
+}
