@@ -10774,6 +10774,7 @@ body {
 }
 
 .navbar {
+  border: 1px solid #ff0000;
   position: fixed;
   background-color: rgba(223, 229, 117, 0.3);
   width: 100%;
