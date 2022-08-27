@@ -3,7 +3,7 @@
 // to customize it as you may want.
 
 @import "variables";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Write your sass code here or import partials
 
@@ -24,36 +24,43 @@ body {
 }
 
 .navbar {
-  border: 1px solid #ff0000;
+  //   border: 1px solid #ff0000;
   position: fixed;
-  background-color: rgba(223, 229, 117, 0.3);
+  background-color: rgba(223, 229, 117, 0.4);
   width: 100%;
   height: 5rem;
 
-  //   z-index: 3;
+  ul {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    justify-content: end;
+
+    li {
+      font-size: 1.8rem;
+      padding-right: 5.5rem;
+      list-style: none;
+      font-family: "peachSundress";
+      //   border-bottom: 0;
+    }
+  }
 }
 
-.navbar ul > li {
-  //   margin: 1rem;
-
-  padding-right: 5.5rem;
-  list-style: none;
-  font-family: "peachSundress";
-  src: url("../assets/fonts/bulletto/Bulletto\ Killa.ttf");
-  font-size: larger;
+a {
+  text-decoration: none;
 }
 
-ul {
-  //   justify-content: space-between;
-  display: flex;
-  padding: 1rem;
-  width: 100%;
-  justify-content: end;
+.nav-tabs:hover {
+  color: #ff5dcd;
 }
 
-.nav-tabs {
-  position: relative;
+.nav-tabs ul li:hover {
+  color: #ff5dcd;
 }
+
+//   src: url("../assets/fonts/bulletto/Bulletto\ Killa.ttf");
+//   font-size: larger;
+// }
 
 .dropdown {
   padding: 0;
@@ -62,12 +69,17 @@ ul {
   //   width: 100%;
 }
 
-.list-item:hover > .dropdown {
+.drop-item:hover > .dropdown {
   display: block;
 }
 
 .social-tabs {
-  display: block;
+  //   display: block;
+  padding: 0.5rem 0;
+
+  a {
+    font-size: 1.5rem;
+  }
 }
 
 .introPage {
@@ -75,6 +87,36 @@ ul {
   justify-content: space-between;
   height: 100vh;
   align-items: center;
+
+  background: linear-gradient(-45deg, #dce8a7, #bddde1, #d8dab0, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  //   SUSPICIOUS NAVBAR BEHAVIOR
+
+  //   background-color: #e5e5f7;
+  //   opacity: 0.8;
+  //   background-image: linear-gradient(135deg, #c6dadd 25%, transparent 25%),
+  //     linear-gradient(225deg, #c6dadd 25%, transparent 25%),
+  //     linear-gradient(45deg, #c6dadd 25%, transparent 25%),
+  //     linear-gradient(315deg, #c6dadd 25%, #e5e5f7 25%);
+  //   background-position: 15px 0, 15px 0, 0 0, 0 0;
+  //   background-size: 15px 15px;
+  //   background-repeat: repeat;
 }
 
 .greeting-text {
@@ -184,48 +226,236 @@ ul {
   animation-delay: 0.5s;
 }
 
-// INTRO PAGE ENDS STORY SLIDES STARTS
+// INTRO PAGE ENDS STORY SLIDES START
+
+// @keyframes bounce {
+//   0% {
+//   }
+
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+@keyframes grad-cap {
+  0% {
+    // transform: translateY(-100%);
+    transform: rotate(-22deg) translate(-13rem, -10rem);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.story {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  //   border: 2px solid green;
+
+  .fa-graduation-cap {
+    color: #ff5dcd;
+    font-size: 3rem;
+    animation: grad-cap 3s;
+    transform: rotate(-22deg) translate(-13rem, -3.5rem);
+  }
+
+  h2 {
+    font-family: "peachSundress";
+    text-align: center;
+    margin-bottom: 10rem;
+    font-size: 4rem;
+    font-weight: 2+00;
+  }
+
+  .chapter {
+    width: 50%;
+    font-size: 1.7rem;
+  }
+}
+
+.story-side {
+  display: flex;
+  justify-content: space-around;
+
+  .grid-container {
+    //   display: flex;
+
+    .pic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 18rem);
+      grid-template-rows: repeat(2, 18rem);
+      align-items: center;
+      justify-items: center;
+      gap: 0.4rem;
+
+      .pc-03 {
+        background-color: #ffff3f;
+        opacity: 0.8;
+        background-image: linear-gradient(135deg, #ffff3f 25%, transparent 0%),
+          linear-gradient(225deg, #ffff3f 25%, transparent 0%),
+          linear-gradient(45deg, #ffff3f 25%, transparent 0%),
+          linear-gradient(315deg, #ffff3f 25%, #e5e5f7 0%);
+        background-position: 17px 0, 17px 0, 0 0, 0 0;
+        background-size: 17px 17px;
+        background-repeat: repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        //   SECONDARY BACKGROUND PATTERN
+
+        //   background-image: linear-gradient(135deg, #e7f4d7 25%, transparent 25%),
+        //     linear-gradient(45deg, #e7f4d7 25%, transparent 25%),
+        //     linear-gradient(315deg, #e7f4d7 25%, transparent 25%);
+        //   background-position: 17px 0, 17px 0, 0 0, 0 0;
+        //   background-size: 17px 17px;
+        //   background-repeat: repeat;
+
+        i {
+          color: #ff5dcd;
+
+          position: absolute;
+        }
+
+        .fa-disease {
+          font-size: 4rem;
+          animation: clock-wise 6s;
+          animation-iteration-count: infinite;
+          position: relative;
+          top: 3rem;
+        }
+
+        .fa-crown {
+          font-size: 14rem;
+          z-index: -5;
+          color: #ffff3f;
+          animation: counter-wise 6s;
+          animation-iteration-count: infinite;
+          //   transform: translate(-45%, 20%);
+        }
+      }
+
+      .p-cube {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        //   position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes clock-wise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes counter-wise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-359deg);
+  }
+}
+
+// .ar-container {
+//   border: 2px solid red;
+// }
+
+// .ar-container img {
+//     width: 50%;
+//     height: auto;
+// }
+
+.keyword {
+  text-decoration: none;
+  color: rgb(231, 244, 215);
+  text-shadow: 1px 0px 11px rgba(23, 26, 28, 0.73);
+  font-weight: 500;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+// CONTACT FORM
+
+.form-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+
+  .contact-form {
+    border: 1px solid red;
+    height: 50%;
+  }
+}
+
+form {
+  //   width: 50%;
+  display: flex;
+  flex-direction: column;
+  //   padding: 1rem;
+
+  .form-items {
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
 
 h2 {
   font-family: "peachSundress";
   text-align: center;
   margin-bottom: 10rem;
   font-size: 4rem;
+  font-weight: 2+00;
 }
-
-.story {
-  height: 100vh;
-
-  border: 2px solid green;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.chapter {
-  width: 50%;
-  //   border: 5px solid red;
-  //   height: 5rem;
-  font-size: 2rem;
-  //   margin: auto;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-}
-
-a {
-  text-decoration: none;
-  color: rgb(231, 244, 215);
-  text-shadow: 1px 0px 11px rgba(23, 26, 28, 0.73);
-}
-
-p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-}
-
 // REMNANTS HI-GRID
 
 // .hi-grid {
