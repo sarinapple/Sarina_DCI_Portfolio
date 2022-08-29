@@ -10,7 +10,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   background-repeat: no-repeat;
 }
 
@@ -20,7 +20,15 @@
 }
 
 body {
-  background-color: rgba(191, 214, 217, 0.89);
+  //   background-color: rgba(191, 214, 217, 0.89);
+  background-color: #c0cae5;
+  //   background-color: #bddde1;
+}
+
+#contact-page {
+  background: linear-gradient(-45deg, #dce8a7, #bddde1, #d8dab0, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .navbar {
@@ -37,6 +45,7 @@ body {
     justify-content: end;
 
     li {
+      color: #354550;
       font-size: 1.8rem;
       padding-right: 5.5rem;
       list-style: none;
@@ -48,19 +57,15 @@ body {
 
 a {
   text-decoration: none;
+  color: #ff5dcd;
 }
 
 .nav-tabs:hover {
   color: #ff5dcd;
 }
 
-.nav-tabs ul li:hover {
-  color: #ff5dcd;
+a:hover {
 }
-
-//   src: url("../assets/fonts/bulletto/Bulletto\ Killa.ttf");
-//   font-size: larger;
-// }
 
 .dropdown {
   padding: 0;
@@ -73,6 +78,11 @@ a {
   display: block;
 }
 
+.drop-item > .dropdown li:hover {
+  transform: scale(1.4);
+  transition: 0.5s;
+}
+
 .social-tabs {
   //   display: block;
   padding: 0.5rem 0;
@@ -82,13 +92,15 @@ a {
   }
 }
 
+// NAV ENDS HERO PAGE STARTS
+
 .introPage {
   display: flex;
   justify-content: space-between;
   height: 100vh;
   align-items: center;
 
-  background: linear-gradient(-45deg, #dce8a7, #bddde1, #d8dab0, #23d5ab);
+  background: linear-gradient(-45deg, #dce8a7, #c0cae5, #d8dab0, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
@@ -124,7 +136,7 @@ a {
   font-size: 12.5rem;
   letter-spacing: 0.5rem;
   width: 50%;
-
+  color: #354550;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,8 +159,6 @@ a {
   display: flex;
   justify-content: space-between;
   margin-right: 8rem;
-  //   justify-content: center;
-  //   align-items: center;
 }
 
 .letter-h {
@@ -173,7 +183,7 @@ a {
 }
 
 .h-cube {
-  background-color: black;
+  background-color: #354550;
   width: 12rem;
   height: 12rem;
   margin-bottom: 0.4rem;
@@ -272,14 +282,29 @@ a {
   }
 }
 
+// .sf-banner {
+//   background-image: url(../assets/foggy_ggb1024x1024.jpg);
+//   width: 100%;
+//   height: 40vh;
+//   background-size: cover;
+//   background-position: center;
+//   box-shadow: 4px 5px 27px -2px rgba(89, 115, 110, 0.76);
+
+//   position: absolute;
+//   top: 0;
+// }
+
+// CHAPTER & STORY BASE STYLES
+
 .story {
-  height: 100vh;
+  min-height: 90vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   //   border: 2px solid green;
+  position: relative;
 
   .fa-graduation-cap {
     color: #ff5dcd;
@@ -293,7 +318,10 @@ a {
     text-align: center;
     margin-bottom: 10rem;
     font-size: 4rem;
-    font-weight: 2+00;
+    font-weight: 200;
+    color: #354550;
+    text-decoration: wavy;
+    text-decoration-color: #ff5dcd;
   }
 
   .chapter {
@@ -302,12 +330,46 @@ a {
   }
 }
 
+// BASE P STYLES AND CLASS KEYWORDS FOR VISIBLE CONTENT SCHEME
+
+.keyword {
+  text-decoration: none;
+  color: rgb(231, 244, 215);
+  text-shadow: 1px 0px 11px rgba(23, 26, 28, 0.73);
+  font-weight: 500;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+hr {
+  border: 0;
+  height: 0.1rem;
+  background-image: linear-gradient(-45deg, #dce8a7, #ff5dcd, #f2f85f, #d773b7);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  width: 25%;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+// STORIES FLEX HORIZONTAL STYLE
+
 .story-side {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   .grid-container {
-    //   display: flex;
+    display: flex;
+
+    background: linear-gradient(-45deg, #dce8a7, #ff5dcd, #f2f85f, #d773b7);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    padding: 0.5rem;
+    border-radius: 1rem;
 
     .pic-grid {
       display: grid;
@@ -331,15 +393,6 @@ a {
         justify-content: center;
         align-items: center;
 
-        //   SECONDARY BACKGROUND PATTERN
-
-        //   background-image: linear-gradient(135deg, #e7f4d7 25%, transparent 25%),
-        //     linear-gradient(45deg, #e7f4d7 25%, transparent 25%),
-        //     linear-gradient(315deg, #e7f4d7 25%, transparent 25%);
-        //   background-position: 17px 0, 17px 0, 0 0, 0 0;
-        //   background-size: 17px 17px;
-        //   background-repeat: repeat;
-
         i {
           color: #ff5dcd;
 
@@ -357,7 +410,7 @@ a {
         .fa-crown {
           font-size: 14rem;
           z-index: -5;
-          color: #ffff3f;
+          color: rgb(255, 255, 63, 0.7);
           animation: counter-wise 6s;
           animation-iteration-count: infinite;
           //   transform: translate(-45%, 20%);
@@ -367,15 +420,57 @@ a {
       .p-cube {
         width: 100%;
         height: 100%;
-        overflow: hidden;
-        border-radius: 10px;
-        //   position: relative;
 
         img {
+          border-radius: 10px;
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+      }
+    }
+  }
+
+  .ch-02,
+  .ch-03 {
+    margin: auto 0;
+  }
+
+  .trio-container {
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(-45deg, #dce8a7, #bddde1, #d8dab0, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    .trio-cube {
+      //   border: 0.6rem solid #354550;
+      // background-color: #354550;
+      width: 12rem;
+      height: 12rem;
+      margin-bottom: 0.4rem;
+      margin: 0rem;
+      // padding: 0.5rem;
+      border-radius: 10px;
+      margin: 1.4rem;
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .img-bridge-left {
+        object-position: top left;
+      }
+
+      .img-bridge-right {
+        object-position: bottom right;
       }
     }
   }
@@ -401,27 +496,6 @@ a {
   }
 }
 
-// .ar-container {
-//   border: 2px solid red;
-// }
-
-// .ar-container img {
-//     width: 50%;
-//     height: auto;
-// }
-
-.keyword {
-  text-decoration: none;
-  color: rgb(231, 244, 215);
-  text-shadow: 1px 0px 11px rgba(23, 26, 28, 0.73);
-  font-weight: 500;
-}
-
-p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-}
-
 // CONTACT FORM
 
 .form-page {
@@ -431,31 +505,65 @@ p {
   height: 100vh;
 
   .contact-form {
-    border: 1px solid red;
+    // border: 1px solid red;
     height: 50%;
-  }
-}
+    background: linear-gradient(-45deg, #dce8a7, #bddde1, #d8dab0, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-radius: 10px;
 
-form {
-  //   width: 50%;
-  display: flex;
-  flex-direction: column;
-  //   padding: 1rem;
+    form {
+      //   width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //   padding: 1rem;
 
-  .form-items {
-    width: 75%;
-    margin: 0 auto;
-    padding: 1rem;
+      .form-items {
+        width: 75%;
+        margin: 0 auto;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 0.4rem;
+        border-style: none;
+      }
+
+      #contactBtn {
+        width: 5rem;
+        padding: 1rem;
+        margin: auto;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: rgba(223, 229, 117, 0.4);
+        background-image: linear-gradient(
+          -45deg,
+          #dce8a7,
+          #ff5dcd,
+          #f2f85f,
+          #d773b7
+        );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        border-radius: 10px;
+        margin-top: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        border-style: none;
+      }
+    }
   }
 }
 
 h2 {
+  color: #354550;
   font-family: "peachSundress";
   text-align: center;
-  margin-bottom: 10rem;
+  font-weight: 300;
   font-size: 4rem;
-  font-weight: 2+00;
+  padding: 1rem;
 }
+
 // REMNANTS HI-GRID
 
 // .hi-grid {
