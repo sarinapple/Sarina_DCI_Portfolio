@@ -23,16 +23,19 @@
   <body id="contact-page">
     <nav class="navbar">
       <ul>
-        <a href="index.html">
-          <li class="nav-tabs">Home</li>
-        </a>
+        <li class="nav-tabs"><a href="index.html">Home</a></li>
 
         <li class="nav-tabs drop-item">
           Work
           <ul class="dropdown">
-            <li class="social-tabs"><a href="#">GitHub</a></li>
             <li class="social-tabs">
-              <a href="https://sarinacrivello.com/" target="_blank"
+              <a class="tab-option" href="#">GitHub</a>
+            </li>
+            <li class="social-tabs">
+              <a
+                class="tab-option"
+                href="https://sarinacrivello.com/"
+                target="_blank"
                 >Miami Ad Portfolio</a
               >
             </li>
@@ -42,8 +45,16 @@
         <li class="nav-tabs drop-item">
           Social
           <ul class="dropdown">
-            <li class="social-tabs"><a href="about_me.html">About</a></li>
-            <li class="social-tabs"><a href="contact.html">Contact</a></li>
+            <li class="social-tabs">
+              <a
+                class="tab-option"
+                href="https://www.linkedin.com/in/sarinacrivello/"
+                >LinkedIn</a
+              >
+            </li>
+            <li class="social-tabs">
+              <a class="tab-option" href="contact.html">Contact</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -71,7 +82,7 @@
             id=""
             cols="30"
             rows="10"
-            placeholder="Write you rmessage here..."
+            placeholder="Write your message here..."
           ></textarea>
 
           <input type="submit" value="Send" id="contactBtn" />
